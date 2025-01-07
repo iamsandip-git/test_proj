@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  calculator:
+    build: .
+    container_name: calculator_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=app.py
+    working_dir: /app
+    command: python app.py
